@@ -1,0 +1,58 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.4em;
+}
+
+.Header__menu {
+  height: 3em;
+  background: #123671;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5em;
+  h1 {
+    color: aliceblue;
+  }
+  a {
+    color: aliceblue;
+    padding-left: 2em;
+    text-decoration: none;
+  }
+}
+
+.Table {
+  width: 1024px;
+  margin: 2em auto;
+  background-color: #fff;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+
+  &__head {
+    background-color: red;
+    color: white;
+    text-align: left;
+    th {
+      padding: 12px 15px;
+      font-weight: 300;
+    }
+  }
+
+  &__body {
+    td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+    }
+    tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+  }
+}
