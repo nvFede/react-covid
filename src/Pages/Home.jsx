@@ -10,11 +10,15 @@ export default class Usuarios extends Component {
   }
 
   async componentDidMount() {
-    const response = await axios.get("https://api.covid19api.com/summary");
-    console.log(response.data.Countries.length);
-    this.setState({
-      data: response.data.Countries,
-    });
+    try {
+      const response = await axios.get("https://api.covid19api.com/summary");
+      console.log(response.data.Countries.length);
+      this.setState({
+        data: response.data.Countries,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   loadRows = () =>

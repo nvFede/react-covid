@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 import Usuarios from "../Pages/Home";
 
-import "../styles/main.scss";
+import "../assets/styles/main.scss";
 
 const About = () => <h1>About!</h1>;
 
