@@ -1,5 +1,13 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 /* Vairables */
+$primary-color: #E61526;
 $site-width: 1024px;
+$main-font: 'Roboto',
+sans-serif;
+
 
 /* Mixins*/
 @mixin reset-margin {
@@ -11,6 +19,7 @@ $site-width: 1024px;
 
 html {
   font-size: 62.5%;
+
 }
 
 * {
@@ -20,12 +29,13 @@ html {
 
 body {
   font-size: 1.4em;
+  font-family: $main-font;
 }
 
 .Header__menu {
-  height: 5em;
-  border-bottom: 1px solid red;
+  border-bottom: 2px solid $primary-color;
   width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 
   &--container {
     display: flex;
@@ -40,39 +50,118 @@ body {
   }
 
   a {
-    color: #111;
+    color: #444;
+    font-weight: 600;
+    text-transform: capitalize;
     padding-left: 2em;
     text-decoration: none;
   }
 }
 
-.Table {
+.Main {
   @include reset-margin();
+  height: calc(100vh - 22em);
+  overflow-y: auto;
+  overflow-x: hidden;
   margin-top: 3em;
+}
+
+.Table {
   background-color: #fff;
   border-collapse: collapse;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+  width: 100%;
 
   &__head {
-    background-color: red;
     color: white;
-    text-align: left;
+
 
     th {
+      text-align: right;
       padding: 12px 15px;
-      font-weight: 300;
+      font-weight: 400;
+      position: sticky;
+      top: 0;
+      background-color: $primary-color;
+
+      &:first-child {
+
+        text-align: left;
+      }
     }
   }
 
   &__body {
+
     td {
       border: 1px solid #ddd;
       padding: 12px 15px;
+      text-align: right;
+
+      &:first-child {
+        text-align: left;
+      }
     }
 
     tr:nth-of-type(even) {
       background-color: #f3f3f3;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5em;
+  background: $primary-color;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba($primary-color, 0.5);
+}
+
+:root {
+  scrollbar-face-color: rgba($primary-color, 0.5);
+  /* Firefox 63 compatibility */
+  scrollbar-track-color: rgba($primary-color, 0.5);
+  /* Firefox 63 compatibility */
+  scrollbar-color: rgba($primary-color, 0.5) rgba(0, 0, 0, 0.1);
+  scrollbar-width: 0.7em;
+}
+
+.Global {
+  width: 100%;
+  margin-top: 2em;
+
+  .Grid {
+
+    display: grid;
+    @include reset-margin();
+    grid-template-columns: repeat(3, 1fr);
+
+    .card {
+      text-align: center;
+
+      h2 {
+        color: $primary-color;
+      }
+
+      h3 {
+        color: #454545;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+
 }

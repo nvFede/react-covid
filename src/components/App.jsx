@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Menu from "./Menu";
 
-import Usuarios from "../Pages/Home";
+import Home from "../Pages/Home";
 
 import "../assets/styles/main.scss";
 
@@ -14,8 +14,9 @@ const App = () => (
     <BrowserRouter>
       <Menu />
       <Switch>
-        <Route exact path="/" component={Usuarios} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/countries/:slug" />
       </Switch>
     </BrowserRouter>
   </Fragment>
