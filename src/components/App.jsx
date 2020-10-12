@@ -4,10 +4,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Menu from "./Menu";
 
 import Home from "../Pages/Home";
+import Country from "../Pages/Country";
+import About from "../Pages/About";
 
 import "../assets/styles/main.scss";
-
-const About = () => <h1>About!</h1>;
 
 const App = () => (
   <Fragment>
@@ -16,7 +16,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/countries/:slug" />
+        <Route exact path="/countries/:slug" component={Country} />
       </Switch>
     </BrowserRouter>
   </Fragment>

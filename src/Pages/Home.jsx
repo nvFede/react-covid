@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+
 import axios from "axios";
 
 const opt = { style: "decimal" };
@@ -22,13 +23,13 @@ export default class Home extends Component {
         data: response.data.Countries,
       });
     } catch (error) {
-      console.log(`API REQUEST FAILED:  ${error}`);
+      console.error(`API REQUEST FAILED:  ${error}`);
     }
   }
 
   loadRows = () =>
     this.state.data.map((countries) => (
-      <tr key={countries.id} className="">
+      <tr key={countries.id} className="Country">
         <td>{countries.Country}</td>
         <td>{numberFormat.format(countries.NewConfirmed)}</td>
         <td>{numberFormat.format(countries.TotalConfirmed)}</td>
@@ -51,16 +52,20 @@ export default class Home extends Component {
               <h2>{numberFormat.format(this.state.global.TotalConfirmed)}</h2>
             </div>
             <div className="card">
-              <h3>New DEaths</h3>
+              <h3>New Deaths</h3>
               <h2>{numberFormat.format(this.state.global.NewDeaths)}</h2>
-              <h3>Total DEaths</h3>
+              <h3>Total Deaths</h3>
               <h2>{numberFormat.format(this.state.global.TotalDeaths)}</h2>
             </div>
             <div className="card">
-              <h3>New REcovered</h3>
-              <h2>{numberFormat.format(this.state.global.NewRecovered)}</h2>
-              <h3>Total REcovered</h3>
-              <h2>{numberFormat.format(this.state.global.TotalRecovered)}</h2>
+              <h3>New Recovered</h3>
+              <h2 className="positive">
+                {numberFormat.format(this.state.global.NewRecovered)}
+              </h2>
+              <h3>Total Recovered</h3>
+              <h2 className="positive">
+                {numberFormat.format(this.state.global.TotalRecovered)}
+              </h2>
             </div>
           </div>
         </section>
