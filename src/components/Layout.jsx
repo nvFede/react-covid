@@ -5,7 +5,8 @@ const Layout = ({children}) => (
 
     <div className="App">
         <Menu />
-        {children}
+        <main className="Main">{children}</main>
+        
     </div>
     
 

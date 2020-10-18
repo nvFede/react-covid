@@ -6,7 +6,9 @@ import logo from "../assets/images/logo.jpg";
 const Menu = (props) => (
   <header className="Header__menu">
     <div className="Header__menu--container">
-      <img src={logo} alt="covid logo" className="Header__menu--logo" />
+      <Link to="/">
+        <img src={logo} alt="covid logo" className="Header__menu--logo" />
+      </Link>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>

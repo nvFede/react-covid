@@ -7,9 +7,8 @@ export default class Home extends Component {
   render() {
     return (
       <Fragment>
-        <main className="Main">
+        
         <Table />
-        </main>
       </Fragment>
     );
   }
