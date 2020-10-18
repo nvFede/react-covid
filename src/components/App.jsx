@@ -8,6 +8,7 @@ import Country from "../Pages/Country";
 import About from "../Pages/About";
 
 import "../assets/styles/main.scss";
+import NotFound from "./NotFound";
 
 const App = () => (
   <Fragment>
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/countries/:slug" component={Country} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   </Fragment>
